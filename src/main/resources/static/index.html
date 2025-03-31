@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script defer src="/javascript/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cihad Özdemir | Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
             display: flex;
@@ -23,6 +22,10 @@
             width: 100%;
             bottom: 0;
         }
+
+        section {
+            margin-bottom: 3rem;
+        }
     </style>
 </head>
 
@@ -30,7 +33,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">My Portfolio</a>
+                <a class="navbar-brand" href="#">Cihad Özdemir</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,39 +42,67 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="HTML/projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <section id="home" class="container text-center mt-5">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Discover my work and projects.</p>
-    </section>
+    <main class="container mt-5 content">
+        <section id="home" class="text-center mb-5">
+            <h1>Cihad Özdemir</h1>
+            <p class="lead">Computer Science | Full Stack Developer | Tech Enthusiast</p>
+            <p><strong>📞 Phone:</strong> +45 60 48 20 99</p>
+            <p><strong>📧 Email:</strong> <a href="mailto:ciha0128@gmail.com">ciha0128@gmail.com</a></p>
+        </section>
 
-    <section id="contact" class="container mt-5">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea class="form-control" id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form>
-    </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Motivated Datamatiker graduate with a strong passion for software development and problem-solving.
+                I have hands-on experience with both frontend and backend technologies, CI/CD pipelines, and cloud-based
+                systems.
+                As a proactive team player, I thrive in collaborative environments and enjoy contributing to innovative
+                solutions.
+                I’m always eager to learn new tools and frameworks to stay up to date in the ever-evolving tech world.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Advanced:</strong> Java, JavaScript, HTML</li>
+                <li><strong>Experience:</strong> Node.js, React, Groovy, CSS</li>
+                <li><strong>Beginner:</strong> Python</li>
+            </ul>
+        </section>
+
+        <section id="tools">
+            <h2>Tools & Technologies</h2>
+            <ul>
+                <li><strong>Frameworks:</strong> Spring Boot, Express.js, Thymeleaf, Pandas, Matplotlib, Keras</li>
+                <li><strong>Databases:</strong> MySQL, MongoDB</li>
+                <li><strong>Tools:</strong> IntelliJ, VS Code, Git, Jenkins, Bitbucket, Jira, Docker, Azure</li>
+                <li><strong>Operating Systems:</strong> Windows, macOS</li>
+            </ul>
+        </section>
+
+        <section id="cv">
+            <h2>Download CV</h2>
+            <a href="/CV_English_Cihad.pdf" class="btn btn-outline-dark" download>Download CV (English)</a>
+        </section>
+
+        <section id="languages">
+            <h2>Languages & Interests</h2>
+            <ul>
+                <li><strong>Languages:</strong> Danish (Native), English (Fluent), Turkish (Fluent)</li>
+                <li><strong>Interests:</strong> Tech communities, football, social events with friends & fiancée</li>
+            </ul>
+        </section>
+    </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2025 My Portfolio</p>
+        <p>&copy; 2025 Cihad Özdemir</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
