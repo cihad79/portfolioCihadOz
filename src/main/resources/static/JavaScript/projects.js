@@ -1,9 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
     fetchProjects();
+
+    const projectForm = document.getElementById("projectForm");
+    if (projectForm) {
+        projectForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const newProject = {
+                titel: document.getElementById("title").value,
+                description: document.getElementById("description").value,
+                technologies: document.getElementById("technologies").value,
+                githubLink: document.getElementById("githubLink").value
+            };
+
+            fetch("/project/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newProject)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to add project");
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert("Project added successfully!");
+                projectForm.reset();
+                fetchProjects(); // Reload list
+            })
+            .catch(error => {
+                console.error("Error adding project:", error);
+                alert("Something went wrong. Please try again.");
+            });
+        });
+    }
 });
 
 function fetchProjects() {
-    fetch("/project/all") // Ensure this matches your backend URL
+    fetch("/project/all")
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -13,27 +50,31 @@ function fetchProjects() {
         .then(data => {
             const projectList = document.getElementById("project-list");
             projectList.innerHTML = "";
+
             if (data.length === 0) {
                 projectList.innerHTML = "<p class='text-muted'>No projects available.</p>";
                 return;
             }
+
             data.forEach(project => {
-                const projectCard = document.createElement("div");
-                projectCard.classList.add("col-md-4", "mb-4");
-                projectCard.innerHTML = `
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">${project.titel}</h5>
-                            <button class="btn btn-info" onclick="showProjectDetails(${project.id})">More Info</button>
-                            <div id="details-${project.id}" class="project-details" style="display:none; margin-top:10px;">
-                                <p><strong>Description:</strong> ${project.description}</p>
-                                <p><strong>Technologies:</strong> ${project.technologies}</p>
-                                <a href="${project.githubLink}" class="btn btn-primary" target="_blank">View on GitHub</a>
-                            </div>
-                        </div>
+                const projectItem = document.createElement("div");
+                projectItem.classList.add("mb-3", "border-bottom", "pb-2");
+
+                projectItem.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-1">${project.titel}</h5>
+                        <button class="btn btn-sm btn-outline-info" onclick="toggleProjectDetails(${project.id}, this)">
+                            More Info
+                        </button>
+                    </div>
+                    <div id="details-${project.id}" class="ml-3 mt-2" style="display: none;">
+                        <p><strong>Description:</strong> ${project.description}</p>
+                        <p><strong>Technologies:</strong> ${project.technologies}</p>
+                        <p><a href="${project.githubLink}" target="_blank">View on GitHub</a></p>
                     </div>
                 `;
-                projectList.appendChild(projectCard);
+
+                projectList.appendChild(projectItem);
             });
         })
         .catch(error => {
@@ -42,11 +83,13 @@ function fetchProjects() {
         });
 }
 
-function showProjectDetails(id) {
+function toggleProjectDetails(id, btn) {
     const detailsDiv = document.getElementById(`details-${id}`);
     if (detailsDiv.style.display === "none") {
         detailsDiv.style.display = "block";
+        btn.textContent = "Hide Info";
     } else {
         detailsDiv.style.display = "none";
+        btn.textContent = "More Info";
     }
 }

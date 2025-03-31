@@ -21,7 +21,7 @@ public class ProjectsService {
     public Projects saveProjekts(Projects projekts) {
         return ProjectsRepository.save(projekts);
     }
-
+ 
     public void deleteProjekts(Long id) {
         ProjectsRepository.deleteById(id);
     }
