@@ -7,6 +7,22 @@
     <title>Cihad Özdemir | Portfolio</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <style>
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -49,62 +65,62 @@
     </header>
 
     <main class="container mt-5 content">
-        <section id="home" class="text-center mb-5">
-            <h1>Cihad Özdemir</h1>
-            <p class="lead">Computer Science | Full Stack Developer | Tech Enthusiast</p>
-            <p><strong>📞 Phone:</strong> +45 60 48 20 99</p>
-            <p><strong>📧 Email:</strong> <a href="mailto:ciha0128@gmail.com">ciha0128@gmail.com</a></p>
+        <section id="hero" class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="assets/potrait.png" alt="Cihad Özdemir" class="img-fluid rounded-circle shadow"
+                        style="width: 250px; height: 250px; object-fit: cover; border: 4px solid #dee2e6;" />
+                </div>
+                <div class="col-md-8">
+                    <h1 class="display-4">Cihad Özdemir</h1>
+                    <p class="lead mb-2">Datamatiker | Full Stack Developer | Tech Enthusiast</p>
+                    <p class="mb-2"><strong>📍</strong> Malmö, Sweden</p>
+                    <p class="mb-2"><strong>📞</strong> +45 60 48 20 99</p>
+                    <p class="mb-3"><strong>📧</strong> <a href="mailto:ciha0128@gmail.com">ciha0128@gmail.com</a></p>
+
+                    <!-- LinkedIn Button -->
+                    <a href="https://www.linkedin.com/in/cihad-%C3%B6zdemir-b50807249/" class="btn btn-outline-primary"
+                        target="_blank" rel="noopener noreferrer">
+                        Visit My LinkedIn
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Motivated Datamatiker graduate with a strong passion for software development and problem-solving.
-                I have hands-on experience with both frontend and backend technologies, CI/CD pipelines, and cloud-based
-                systems.
-                As a proactive team player, I thrive in collaborative environments and enjoy contributing to innovative
-                solutions.
-                I’m always eager to learn new tools and frameworks to stay up to date in the ever-evolving tech world.
-            </p>
+        <section id="infoSlider" class="mb-5">
+            <div class="card shadow p-4 d-flex flex-column justify-content-between" style="min-height: 400px;">
+                <div id="infoContent" class="flex-grow-1" style="min-height: 220px;"></div>
+
+                <!-- Progress bar + nav stays fixed at the bottom -->
+                <div>
+                    <div class="progress mt-4" style="height: 8px;">
+                        <div id="progressBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%;"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <button id="prevBtn" class="btn btn-secondary">Previous</button>
+                        <span id="stepLabel" class="text-muted">Step 1 of 4</span>
+                        <button id="nextBtn" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Advanced:</strong> Java, JavaScript, HTML</li>
-                <li><strong>Experience:</strong> Node.js, React, Groovy, CSS</li>
-                <li><strong>Beginner:</strong> Python</li>
-            </ul>
-        </section>
-
-        <section id="tools">
-            <h2>Tools & Technologies</h2>
-            <ul>
-                <li><strong>Frameworks:</strong> Spring Boot, Express.js, Thymeleaf, Pandas, Matplotlib, Keras</li>
-                <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                <li><strong>Tools:</strong> IntelliJ, VS Code, Git, Jenkins, Bitbucket, Jira, Docker, Azure</li>
-                <li><strong>Operating Systems:</strong> Windows, macOS</li>
-            </ul>
-        </section>
-
-        <section id="cv">
+        <!-- CV section OUTSIDE the slider box -->
+        <section id="cv" class="mb-5">
             <h2>Download CV</h2>
-            <a href="/CV_English_Cihad.pdf" class="btn btn-outline-dark" download>Download CV (English)</a>
+            <a href="assets/CV.pdf" class="btn btn-outline-dark" download>Download CV (English)</a>
         </section>
 
-        <section id="languages">
-            <h2>Languages & Interests</h2>
-            <ul>
-                <li><strong>Languages:</strong> Danish (Native), English (Fluent), Turkish (Fluent)</li>
-                <li><strong>Interests:</strong> Tech communities, football, social events with friends & fiancée</li>
-            </ul>
-        </section>
+
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2025 Cihad Özdemir</p>
     </footer>
-
+    <script src="javascript/infoSlider.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
