@@ -92,11 +92,11 @@ const sections = [
 
       <h5 class="mt-4">💡 Interests</h5>
       <ul>
-        <li>👨‍💻 Exploring new technologies & frameworks</li>
-        <li>🌐 Participating in tech communities & networking</li>
-        <li>⚙️ Building side projects & experimenting with code</li>
-        <li>⚽ Watching & playing football</li>
-        <li>👫 Quality time with friends and my fiancée</li>
+        <li>Exploring new technologies & frameworks</li>
+        <li>Participating in tech communities & networking</li>
+        <li>Building side projects & experimenting with code</li>
+        <li>Watching & playing football</li>
+        <li>Quality time with friends and my fiancée</li>
       </ul>
     `
   },

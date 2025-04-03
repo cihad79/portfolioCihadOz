@@ -107,3 +107,23 @@
         font-size: 0.9rem;
     }
 }
+
+
+/* Glow effect for white logo */
+@keyframes whiteLogoGlow {
+    0% {
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.2));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.2));
+    }
+}
+
+.glow-logo {
+    animation: whiteLogoGlow 2.8s ease-in-out infinite;
+}
