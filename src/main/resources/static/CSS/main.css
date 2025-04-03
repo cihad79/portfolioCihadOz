@@ -109,3 +109,28 @@ section {
     background: linear-gradient(to right, #2c3e50, #4ca1af);
     color: white;
 }
+
+/* CV Section Styling */
+#cv {
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+}
+
+#cv h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+#cv a.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+    border: none;
+}
+
+#cv a.btn:hover {
+    background: linear-gradient(to right, #1f2d3a, #3b8b9f);
+    color: white;
+}
