@@ -12,18 +12,18 @@ import com.example.portfolioCihadOz.repositories.ProjectsRepository;
 public class ProjectsService {
 
     @Autowired
-    private  ProjectsRepository ProjectsRepository;
+    private  ProjectsRepository projectsRepository;
 
     public List<Projects> getAllProjekts() {
-        return ProjectsRepository.findAll();
+        return projectsRepository.findAll();
     }
 
     public Projects saveProjekts(Projects projekts) {
-        return ProjectsRepository.save(projekts);
+        return projectsRepository.save(projekts);
     }
  
     public void deleteProjekts(Long id) {
-        ProjectsRepository.deleteById(id);
+        projectsRepository.deleteById(id);
     }
 
 }
