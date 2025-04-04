@@ -1,0 +1,74 @@
+/* 🎯 Project List Styling */
+#project-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+#project-list .project-card {
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#project-list .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h5 {
+  font-weight: bold;
+  color: #203a43;
+}
+
+.project-card p {
+  margin-bottom: 0.5rem;
+}
+
+.project-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* 🧩 Add Button */
+button[data-target="#addProjectModal"] {
+  font-size: 1.05rem;
+  padding: 0.6rem 1.4rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+button[data-target="#addProjectModal"]:hover {
+  transform: translateY(-2px);
+}
+
+/* 📦 Modal Styling */
+.modal-content {
+  border-radius: 1rem;
+  background: #fefefe;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.modal-body label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}

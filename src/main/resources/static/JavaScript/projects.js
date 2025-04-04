@@ -20,21 +20,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify(newProject)
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Failed to add project");
-                }
-                return response.json();
-            })
-            .then(data => {
-                alert("Project added successfully!");
-                projectForm.reset();
-                fetchProjects(); // Reload list
-            })
-            .catch(error => {
-                console.error("Error adding project:", error);
-                alert("Something went wrong. Please try again.");
-            });
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to add project");
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    alert("Project added successfully!");
+                    projectForm.reset();
+                    fetchProjects(); // Opdatér listen
+                })
+                .catch(error => {
+                    console.error("Error adding project:", error);
+                    alert("Something went wrong. Please try again.");
+                });
         });
     }
 });
@@ -58,7 +58,7 @@ function fetchProjects() {
 
             data.forEach(project => {
                 const projectItem = document.createElement("div");
-                projectItem.classList.add("mb-3", "border-bottom", "pb-2");
+                projectItem.classList.add("project-card");
 
                 projectItem.innerHTML = `
                     <div class="d-flex justify-content-between align-items-center">
