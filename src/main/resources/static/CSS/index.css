@@ -134,3 +134,32 @@ section {
     background: linear-gradient(to right, #1f2d3a, #3b8b9f);
     color: white;
 }
+
+
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s ease-out;
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(40px);
+}
+
+/* Når den er i view */
+.timeline-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.hero-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.hero-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
