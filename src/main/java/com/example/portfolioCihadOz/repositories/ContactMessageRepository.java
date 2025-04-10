@@ -1,4 +1,3 @@
-
 package com.example.portfolioCihadOz.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;

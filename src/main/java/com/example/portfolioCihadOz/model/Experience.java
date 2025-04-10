@@ -1,3 +1,4 @@
+
 package com.example.portfolioCihadOz.model;
 
 import jakarta.persistence.Entity;
@@ -14,7 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class School {
+public class Experience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +24,5 @@ public class School {
     private String yearComplete;
     private String title;
     private String description;
+
 }
