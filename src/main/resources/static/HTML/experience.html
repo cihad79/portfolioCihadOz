@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience – Cihad Özdemir</title>
+    <link rel="stylesheet" href="../CSS/experience.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+    <h1>Experience</h1>
+
+    <div class="section">
+        <h2>🎓 Education</h2>
+        <div class="card-container" id="education-container"></div>
+    </div>
+
+    <div class="section">
+        <h2>💼 Work Experience</h2>
+        <div class="card-container" id="experience-container"></div>
+    </div>
+
+    <div id="footer"></div>
+    <div id="contact"></div>
+
+    <script>
+        // Load shared components
+        async function loadComponent(id, path) {
+            const res = await fetch(path);
+            const html = await res.text();
+            document.getElementById(id).innerHTML = html;
+        }
+
+        loadComponent("navbar", "../components/navbar.html");
+        loadComponent("footer", "../components/footer.html");
+        loadComponent("contact", "../components/contactModal.html");
+    </script>
+    <script src="../JavaScript/experience.js"></script>
+
+</body>
+
+</html>
