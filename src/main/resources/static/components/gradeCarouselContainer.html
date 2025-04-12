@@ -5,17 +5,12 @@
       <li data-target="#gradeCarousel" data-slide-to="1"></li>
     </ol>
 
-    <div class="carousel-inner text-center">
-
+    <div class="carousel-inner">
       <!-- HF Slide -->
       <div class="carousel-item active">
-        <div class="carousel-img grade-slide-bg"
-          style="background: url('../assets/school/KPG.png') center/cover no-repeat; height: 360px; position: relative;">
-          <div class="carousel-title-overlay">
-            <h5>HF – Copenhagen Private Gymnasium</h5>
-          </div>
-          <button class="btn btn-outline-light mt-3 position-absolute bottom-0 start-50 translate-middle-x mb-4"
-            data-toggle="modal" data-target="#hfModal">
+        <div class="grade-slide-bg" style="background-image: url('../assets/school/KPG.png');">
+          <div class="overlay"></div>
+          <button class="btn btn-outline-light" data-toggle="modal" data-target="#hfModal">
             View Full Grade Report
           </button>
         </div>
@@ -23,18 +18,13 @@
 
       <!-- KEA Slide -->
       <div class="carousel-item">
-        <div class="carousel-img grade-slide-bg"
-          style="background: url('../assets/school/KEA.png') center/cover no-repeat; height: 360px; position: relative;">
-          <div class="carousel-title-overlay">
-            <h5>Datamatiker – KEA</h5>
-          </div>
-          <button class="btn btn-outline-light mt-3 position-absolute bottom-0 start-50 translate-middle-x mb-4"
-            data-toggle="modal" data-target="#dataModal">
+        <div class="grade-slide-bg" style="background-image: url('../assets/school/KEA.png');">
+          <div class="overlay"></div>
+          <button class="btn btn-outline-light" data-toggle="modal" data-target="#dataModal">
             View Full Grade Report
           </button>
         </div>
       </div>
-
     </div>
 
     <a class="carousel-control-prev" href="#gradeCarousel" role="button" data-slide="prev">
@@ -43,34 +33,5 @@
     <a class="carousel-control-next" href="#gradeCarousel" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </a>
-  </div>
-
-  <!-- Modals -->
-  <div class="modal fade" id="hfModal" tabindex="-1" aria-labelledby="hfModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content p-3">
-        <div class="modal-header">
-          <h5 class="modal-title">HF – Full Grade Report</h5>
-          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="../assets/Grades/HF_Grade.png" class="img-fluid rounded shadow" alt="HF Grade">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="dataModal" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content p-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Datamatiker – Full Grade Report</h5>
-          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="../assets/Grades/DATA_Grade.png" class="img-fluid rounded shadow" alt="Datamatiker Grade">
-        </div>
-      </div>
-    </div>
   </div>
 </section>

@@ -3,35 +3,83 @@
   margin: 0 auto 2rem;
 }
 
-.carousel-img {
-  height: auto;
-  max-height: 420px;
-  width: 100%;
-  object-fit: contain;
+/* The main slide panel */
+.grade-slide-panel {
+  position: relative;
+  height: 360px;
+  background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background watermark (zoomed out and centered) */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 140px;
+  /* smaller = zoomed out */
+  width: 140px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08;
+  filter: blur(1px);
+  z-index: 0;
+}
+
+/* Visible logo (foreground) */
+.grade-logo-img {
+  max-width: 150px;
+  /* smaller = more zoomed out */
+  max-height: 90px;
+  object-fit: contain;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
 }
 
-.carousel-img:hover {
-  transform: scale(1.01);
+.grade-logo-img:hover {
+  transform: scale(1.03);
 }
 
-/* Arrows */
+/* Button styling */
+.grade-slide-panel .btn {
+  z-index: 1;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.grade-slide-panel .btn:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Carousel arrows with white glow, centered */
 .carousel-control-prev,
 .carousel-control-next {
+  top: 50% !important;
+  transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  z-index: 2;
+  z-index: 10;
+  position: absolute;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
 }
 
 .carousel-control-prev-icon,
@@ -39,24 +87,10 @@
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
+  filter: drop-shadow(0 0 8px white) brightness(5);
 }
 
-/* Title overlay */
-.carousel-title-overlay {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.55);
-  padding: 6px 16px;
-  border-radius: 6px;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  z-index: 10;
-}
-
-/* Carousel core behavior */
+/* Carousel structure */
 .carousel-inner {
   position: relative;
   width: 100%;
@@ -65,59 +99,9 @@
 
 .carousel-item {
   display: none;
-  position: relative;
   transition: transform 0.6s ease-in-out;
 }
 
 .carousel-item.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-title-overlay {
-  position: relative;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 6px 16px;
-  border-radius: 6px;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.carousel-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  /* Optional dark overlay */
-  z-index: 0;
-}
-
-.carousel-item>* {
-  z-index: 1;
-}
-
-.grade-slide-bg {
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.carousel-title-overlay {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.55);
-  padding: 6px 16px;
-  border-radius: 6px;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  z-index: 10;
+  display: block;
 }

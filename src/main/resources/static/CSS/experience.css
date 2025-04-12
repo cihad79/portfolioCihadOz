@@ -1,106 +1,92 @@
-h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+#gradeSlider {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    position: relative;
 }
 
-.section {
-    margin-bottom: 4rem;
-}
-
-.section h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    text-align: center;
-}
-
-/* === Education Cards (matches project style) === */
-.card-container {
+.grade-slide-bg {
+    height: 400px;
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: flex-end;
     justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
 }
 
-.card {
-    background: #ffffff;
-    border-radius: 0.75rem;
-    padding: 1rem 1.2rem;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.grade-slide-bg .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+.grade-slide-bg .btn {
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 
-.card .year {
-    color: #777;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+.grade-slide-bg .btn:hover {
+    transform: scale(1.05);
 }
 
-.card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #203a43;
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.card p {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    color: #444;
+.carousel-item {
+    display: none;
+    transition: transform 0.6s ease-in-out;
 }
 
-/* === Experience List (styled to match card hover/spacing) === */
-.list-group-item {
-    background: #ffffff;
-    border-left: 4px solid #2c5364;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
-    padding: 1.2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.list-group-item:hover {
-    background-color: #f9f9f9;
-    transform: translateY(-3px);
-}
-
-.list-group-item strong {
-    font-size: 1.1rem;
-    color: #203a43;
-}
-
-.list-group-item small {
+.carousel-item.active {
     display: block;
-    color: #777;
-    margin-bottom: 0.5rem;
 }
 
-/* === Animation === */
-.fade-in-up {
-    animation: fadeUp 0.8s ease-in-out;
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
 }
 
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* === Responsive === */
-@media screen and (max-width: 576px) {
-    .card {
-        width: 100%;
-    }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-progress {
+    height: 4px;
+    background-color: #e0e0e0;
+    max-width: 200px;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.carousel-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #007bff;
+    transition: width 0.6s ease;
 }
