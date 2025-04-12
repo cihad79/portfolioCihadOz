@@ -26,5 +26,4 @@ public class ContactMessageService {
         contactMessageRepository.deleteById(id);
     }
 
-
 }

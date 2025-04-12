@@ -1,4 +1,3 @@
-
 package com.example.portfolioCihadOz.model;
 
 import jakarta.persistence.Entity;
