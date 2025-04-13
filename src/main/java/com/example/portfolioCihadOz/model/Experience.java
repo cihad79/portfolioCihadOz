@@ -20,7 +20,7 @@ public class Experience {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String yearComplete;
+    private String year;
     private String title;
     private String description;
 

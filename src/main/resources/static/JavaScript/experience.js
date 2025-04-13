@@ -28,7 +28,7 @@ function createCard(item) {
     return `
     <div class="card">
         <div class="year">${item.yearComplete}</div>
-        <h3>${item.title}</h3>
+        <h3>${item.schoolName}</h3>
         <p>${item.description}</p>
     </div>
     `;
@@ -38,7 +38,7 @@ function createListItem(item) {
     return `
     <li class="list-group-item">
         <strong>${item.title}</strong><br>
-        <small>${item.yearComplete}</small>
+        <small>${item.year}</small>
         <p class="mt-1 mb-0">${item.description}</p>
     </li>
     `;

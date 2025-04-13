@@ -20,6 +20,6 @@ public class School {
     private Long id;
 
     private String yearComplete;
-    private String title;
+    private String schoolName;
     private String description;
 }

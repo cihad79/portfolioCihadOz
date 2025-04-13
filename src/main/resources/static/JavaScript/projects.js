@@ -41,7 +41,6 @@ function fetchProjects() {
             });
         })
         .catch(error => {
-            console.error("Error fetching projects:", error);
             document.getElementById("project-list").innerHTML = "<p class='text-danger'>Failed to load projects. Please try again later.</p>";
         });
 }

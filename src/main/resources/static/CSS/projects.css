@@ -92,3 +92,27 @@
 .project-card a:hover {
   text-decoration: underline;
 }
+
+/* Footer Styling */
+.custom-footer {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Ensure it stretches full width */
+  font-size: 0.95rem;
+  padding: 1rem 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Remove any constraints from parent containers */
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-bottom: 0; /* Ensure the content doesn't overlap the footer */
+}

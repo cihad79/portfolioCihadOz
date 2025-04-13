@@ -33,3 +33,6 @@ build/
 .vscode/
 src/main/resources/static/assets/CV.pdf
 src/main/resources/static/assets/potrait.png
+
+# Ignore .env file
+.env
