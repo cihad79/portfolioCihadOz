@@ -135,6 +135,17 @@ section {
     color: white;
 }
 
+#cvModal .modal-dialog {
+    max-width: 80%;
+}
+
+#cvModal img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 .timeline-item {
     opacity: 0;
