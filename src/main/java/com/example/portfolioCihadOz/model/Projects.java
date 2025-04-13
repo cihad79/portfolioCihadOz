@@ -20,7 +20,7 @@ public class Projects {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    private String Titel;
+    private String title;
     private String description;
     private String technologies; 
     private String githubLink;

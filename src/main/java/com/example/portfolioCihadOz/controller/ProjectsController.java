@@ -19,8 +19,8 @@ import com.example.portfolioCihadOz.services.ProjectsService;
 @RestController
 @RequestMapping("/project")
 @CrossOrigin
-public class ProjektsControlller {
-    
+public class ProjectsController {
+
     @Autowired
     private ProjectsService projectsService;
 
@@ -40,5 +40,4 @@ public class ProjektsControlller {
         projectsService.deleteProjekts(id);
         return ResponseEntity.noContent().build();
     }
-
 }
