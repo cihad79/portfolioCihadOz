@@ -1,42 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     fetchProjects();
-
-    const projectForm = document.getElementById("projectForm");
-    if (projectForm) {
-        projectForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const newProject = {
-                titel: document.getElementById("title").value,
-                description: document.getElementById("description").value,
-                technologies: document.getElementById("technologies").value,
-                githubLink: document.getElementById("githubLink").value
-            };
-
-            fetch("/project/add", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newProject)
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Failed to add project");
-                    }
-                    return response.json();
-                })
-                .then(() => {
-                    alert("Project added successfully!");
-                    projectForm.reset();
-                    fetchProjects(); // Opdatér listen
-                })
-                .catch(error => {
-                    console.error("Error adding project:", error);
-                    alert("Something went wrong. Please try again.");
-                });
-        });
-    }
 });
 
 function fetchProjects() {
@@ -62,7 +25,7 @@ function fetchProjects() {
 
                 projectItem.innerHTML = `
                     <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="mb-1">${project.titel}</h5>
+                        <h5 class="mb-1">${project.title}</h5>
                         <button class="btn btn-sm btn-outline-info" onclick="toggleProjectDetails(${project.id}, this)">
                             More Info
                         </button>
