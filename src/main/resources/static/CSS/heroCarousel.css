@@ -1,10 +1,9 @@
 /* Carousel image styling */
 .carousel-img {
-    max-height: 420px;
     width: 100%;
+    max-height: 420px;
     object-fit: cover;
     object-position: top;
-    /* 👈 viser toppen i stedet for midten */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
