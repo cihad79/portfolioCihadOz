@@ -35,4 +35,4 @@ src/main/resources/static/assets/CV.pdf
 
 # Ignore .env file
 .env
-.env
+
