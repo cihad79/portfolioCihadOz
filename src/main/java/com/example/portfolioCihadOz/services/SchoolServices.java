@@ -26,4 +26,8 @@ public class SchoolServices {
         schoolRepository.deleteById(id);
     }
 
+    public List<School> saveSchools(List<School> schools) {
+        return schoolRepository.saveAll(schools);
+    }
+
 }

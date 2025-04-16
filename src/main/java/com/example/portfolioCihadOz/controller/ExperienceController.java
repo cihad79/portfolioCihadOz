@@ -35,6 +35,12 @@ public class ExperienceController {
         return ResponseEntity.ok(savedExperience);
     }
 
+    @PostMapping("/addBatch")  // Add this new endpoint for batch adding
+    public ResponseEntity<List<Experience>> addExperiencesBatch(@RequestBody List<Experience> experiences) {
+        List<Experience> savedExperiences = experienceService.saveExperiencesBatch(experiences);
+        return ResponseEntity.ok(savedExperiences);
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteExperience(@PathVariable Long id) {
         experienceService.deleteExperience(id);

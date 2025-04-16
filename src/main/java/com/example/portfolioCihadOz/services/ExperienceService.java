@@ -22,6 +22,10 @@ public class ExperienceService {
         return experienceRepository.save(experience);
     }
 
+    public List<Experience> saveExperiencesBatch(List<Experience> experiences) {  // Add this method to handle batch save
+        return experienceRepository.saveAll(experiences);
+    }
+
     public void deleteExperience(Long id) {
         experienceRepository.deleteById(id);
     }

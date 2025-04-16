@@ -12,7 +12,7 @@ import com.example.portfolioCihadOz.repositories.ProjectsRepository;
 public class ProjectsService {
 
     @Autowired
-    private  ProjectsRepository projectsRepository;
+    private ProjectsRepository projectsRepository;
 
     public List<Projects> getAllProjekts() {
         return projectsRepository.findAll();
@@ -21,10 +21,13 @@ public class ProjectsService {
     public Projects saveProjekts(Projects projekts) {
         return projectsRepository.save(projekts);
     }
- 
+
+    public List<Projects> saveProjectsBatch(List<Projects> projects) {  // Add this method for batch saving
+        return projectsRepository.saveAll(projects);
+    }
+
     public void deleteProjekts(Long id) {
         projectsRepository.deleteById(id);
     }
 
 }
-

@@ -41,4 +41,10 @@ public class SchoolController {
         return ResponseEntity.noContent().build();
     }
 
+    @PostMapping("/addBatch")
+    public ResponseEntity<List<School>> addSchools(@RequestBody List<School> schools) {
+        List<School> savedSchools = schoolServices.saveSchools(schools);
+        return ResponseEntity.ok(savedSchools);
+    }
+
 }

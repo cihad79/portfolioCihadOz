@@ -35,6 +35,12 @@ public class ProjectsController {
         return ResponseEntity.ok(savedProject);
     }
 
+    @PostMapping("/addBatch")  // Add this method for batch adding
+    public ResponseEntity<List<Projects>> addProjectsBatch(@RequestBody List<Projects> projects) {
+        List<Projects> savedProjects = projectsService.saveProjectsBatch(projects);
+        return ResponseEntity.ok(savedProjects);
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
         projectsService.deleteProjekts(id);
