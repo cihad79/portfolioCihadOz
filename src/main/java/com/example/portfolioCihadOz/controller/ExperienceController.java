@@ -26,7 +26,6 @@ public class ExperienceController{
 
     @GetMapping("/all")
     public List<Experience> getAllExperiences() {
-        System.out.println("GET /Experience/all was called!");
         return experienceService.getAllExperiences();
 
     }
