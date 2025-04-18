@@ -19,14 +19,16 @@ import com.example.portfolioCihadOz.services.ExperienceService;
 @RestController
 @RequestMapping("/Experience")
 @CrossOrigin
-public class ExperienceController {
+public class ExperienceController{
 
     @Autowired
     private ExperienceService experienceService;
 
     @GetMapping("/all")
     public List<Experience> getAllExperiences() {
+        System.out.println("GET /Experience/all was called!");
         return experienceService.getAllExperiences();
+
     }
 
     @PostMapping("/add")
